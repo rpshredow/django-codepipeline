@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ['exhlfdat&vfum(-34*c2uroi(($ww(yo$9pv98=e6p^gl(-eoj']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['django-env.eba-mm6jemud.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['django-env.eba-mm6jemud.us-west-2.elasticbeanstalk.com', '127.0.0.1']
 
 
 # Application definition
@@ -78,8 +78,14 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),\
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django',
+        'USER': 'admin',
+        'PASSWORD': 'mydatabase',
+        'HOST': 'reverieslab-rds.cz5yd7so7vif.us-west-2.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
