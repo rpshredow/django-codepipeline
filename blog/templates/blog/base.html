@@ -12,7 +12,13 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
-    <title>welcome to reveries lab</title>
+    {% if title %}
+      <title>reveries lab- {{ title }}</title>
+    {% else %}
+      <title>reveries lab</title>
+    {% endif %}
+
+    <!-- <title>welcome to reveries lab</title> -->
 </head>
 <body>
     <header class="site-header">
@@ -68,6 +74,7 @@
                           <a class="dropdown-item" href="{% url 'blog-home' %}">Home</a>
                           <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
                           <a class="dropdown-item" href="{% url 'post-create' %}">Create Post</a>
+                          <a class="dropdown-item" href="/user/{{user.username}}">Your Posts</a>
                           <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                       </div>
                     </li>
@@ -100,11 +107,13 @@
         </div>
         
         <!-- sidebar -->
+
+        <!--
         <div class="col-md-4">
           <div class="content-section">
             <h3>Recent Posts</h3>
             <p class='text-muted'>Recent posts from all users.
-              {% for post in posts %}
+              {% for post in posts|slice:":3" %}
               <article class="media content-section">
                 <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
                 <div class="media-body">
@@ -117,7 +126,7 @@
               </article>
               {% endfor %}
 
-              <!--
+              
               {% if is_paginated %}
           
                 {% if page_obj.has_previous %}
@@ -139,10 +148,10 @@
                 {% endif %}
           
               {% endif %}
-              -->
+            
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
     </main>
 
