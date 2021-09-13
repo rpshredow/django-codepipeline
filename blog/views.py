@@ -76,14 +76,3 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
 
-def thesis(request):
-    return render(request, 'blog/thesis.html', {'title': 'Masters Thesis'})
-
-def fpgann(request):
-    return render(request, 'blog/fpgann.html', {'title': 'FPGA Neural Network'})
-
-def cluster(request):
-    return render(request, 'blog/cluster.html', {'title': 'Raspberry Pi Cluster'})
-
-def terrain(request):
-    return render(request, 'blog/terrain.html', {'title': '3D Terrain App'})

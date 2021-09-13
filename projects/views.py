@@ -8,3 +8,9 @@ def terrain(request):
 
 def cluster(request):
     return render(request, 'projects/cluster.html', {'title': 'Raspberry Pi Cluster'})
+
+def thesis(request):
+    return render(request, 'projects/thesis.html', {'title': 'Masters Thesis'})
+
+def fpgann(request):
+    return render(request, 'projects/fpgann.html', {'title': 'FPGA Neural Network'})
