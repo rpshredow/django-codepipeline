@@ -20,6 +20,6 @@ urlpatterns = [
     path('blog/', PostListView.as_view(), name='blog-blog'),
     path('thesis/', views.thesis, name='blog-thesis'),
     path('fpgann/', views.fpgann, name='blog-fpgann'),
-    path('terrain/', views.terrain, name='blog-terrain'),
     path('cluster/', views.cluster, name='blog-cluster'),
+    path('terrain/', views.terrain, name='blog-terrain'),
 ]

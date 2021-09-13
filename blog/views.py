@@ -82,8 +82,8 @@ def thesis(request):
 def fpgann(request):
     return render(request, 'blog/fpgann.html', {'title': 'FPGA Neural Network'})
 
-def terrain(request):
-    return render(request, 'blog/terrain.html', {'title': '3D Terrain App'})
-
 def cluster(request):
     return render(request, 'blog/cluster.html', {'title': 'Raspberry Pi Cluster'})
+
+def terrain(request):
+    return render(request, 'blog/terrain.html', {'title': '3D Terrain App'})
