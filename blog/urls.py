@@ -17,5 +17,9 @@ urlpatterns = [
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='blog-about'),
-    path('blog/', PostListView.as_view(), name='blog-blog')
+    path('blog/', PostListView.as_view(), name='blog-blog'),
+    path('thesis/', views.thesis, name='blog-thesis'),
+    path('fpgann/', views.fpgann, name='blog-fpgann'),
+    path('terrain/', views.terrain, name='blog-terrain'),
+    path('cluster/', views.cluster, name='blog-cluster'),
 ]
