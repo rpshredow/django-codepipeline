@@ -6,4 +6,6 @@ urlpatterns = [
     path('cluster/', views.cluster, name='projects-cluster'),
     path('thesis/', views.thesis, name='projects-thesis'),
     path('fpgann/', views.fpgann, name='projects-fpgann'),
+    path('stock/', views.stock, name='projects-stock'),
+    path('add/', views.add, name='add'),
 ]
