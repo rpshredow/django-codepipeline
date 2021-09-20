@@ -1,12 +1,10 @@
 {% extends "blog/base.html" %}
 {% block content %}
 
-<h1>This page, {{title}} </h1>
+<form action="{% url 'price' %}">
 
-<form action="{% url 'add' %}">
-
-    Enter 1st number : <input type="text" name="num1"><br>
-    Enter 2nd number : <input type="text" name="num2"><br>
+    Enter stock ticker: <input type="text" name="stock"><br>
+    Enter field: <input type="text" name="field"><br>
     <input type="submit">
 
 </form>

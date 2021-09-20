@@ -1,6 +1,14 @@
 {% extends "blog/base.html" %}
 {% block content %}
 
+<form action="{% url 'price' %}">
+
+    Enter stock ticker: <input type="text" name="stock"><br>
+    Enter field: <input type="text" name="field"><br>
+    <input type="submit">
+
+</form>
+
 <p>Result : {{result}}</p>
 
 {% endblock content %}
