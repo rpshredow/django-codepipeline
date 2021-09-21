@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['django-env.eba-mm6jemud.us-west-2.elasticbeanstalk.com', 'reve
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor',
     'projects.apps.ProjectsConfig',
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',

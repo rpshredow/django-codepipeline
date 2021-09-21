@@ -25,8 +25,6 @@ def stock(request):
 def price(request):
     stock = request.GET['stock']
 
-    field = request.GET['field']
-
     stock = stock.upper()
 
     td_consumer_key = 'WBQGUZ4CQPRMK7HF2MXHGHUE5BNMW4P9'
@@ -41,8 +39,39 @@ def price(request):
 
     data = content[stock]
 
-    result = data[field]
+    symbol = data['symbol']
+    description = data['description']
+    bidPrice = data['bidPrice']
+    askPrice = data['askPrice']
+    lastPrice = data['lastPrice']
+    openPrice = data['openPrice']
+    highPrice = data['highPrice']
+    lowPrice = data['lowPrice']
+    closePrice = data['closePrice']
+    totalVolume = data['totalVolume']
+    fiftyTwoWkHigh = data['52WkHigh']
+    fiftyTwoWkLow = data['52WkLow']
+    peRatio = data['peRatio']
+    divAmount = data['divAmount']
+    divYield = data['divYield']
+    divDate = data['divDate']
 
-    return render(request, 'projects/result.html', {'result': result})
 
-    #return JsonResponse({'result': res})
+    return render(request, 'projects/result.html', {
+        'symbol': symbol,
+        'description': description,
+        'bidPrice': bidPrice,
+        'askPrice': askPrice,
+        'lastPrice': lastPrice,
+        'openPrice': openPrice,
+        'highPrice': highPrice,
+        'lowPrice': lowPrice,
+        'closePrice': closePrice,
+        'totalVolume': totalVolume,
+        'fiftyTwoWkHigh': fiftyTwoWkHigh,
+        'fiftyTwoWkLow': fiftyTwoWkLow,
+        'peRatio': peRatio,
+        'divAmount': divAmount,
+        'divYield': divYield,
+        'divDate': divDate,
+        })
