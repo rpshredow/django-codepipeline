@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import pymysql
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,7 @@ SECRET_KEY = ['exhlfdat&vfum(-34*c2uroi(($ww(yo$9pv98=e6p^gl(-eoj']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-env.eba-mm6jemud.us-west-2.elasticbeanstalk.com', 'reverieslab.com', '127.0.0.1']
+ALLOWED_HOSTS = ['209.173.244.107', 'reverieslab.com', '127.0.0.1']
 
 
 # Application definition
@@ -78,6 +79,19 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         # 'ENGINE': 'django.db.backends.sqlite3',
+#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),\
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'django',
+#         'USER': 'admin',
+#         'PASSWORD': 'mydatabase',
+#         'HOST': 'reverieslab-rds.cz5yd7so7vif.us-west-2.rds.amazonaws.com',
+#         'PORT': '3306',
+#     }
+# }
+
 DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
@@ -85,12 +99,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
         'USER': 'admin',
-        'PASSWORD': 'mydatabase',
-        'HOST': 'reverieslab-rds.cz5yd7so7vif.us-west-2.rds.amazonaws.com',
+        'PASSWORD': 'bob59145',
+        'HOST': '192.168.0.142',
         'PORT': '3306',
     }
 }
 
+pymysql.install_as_MySQLdb()
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -129,7 +144,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
